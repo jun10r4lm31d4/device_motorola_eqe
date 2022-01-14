@@ -12,9 +12,6 @@ persist.vendor.service.bt.adv_audio_mask=1
 persist.vendor.btstack.aac_frm_ctl.enabled=true
 persist.vendor.btstack.qhs_enable=true
 
-# CNE
-persist.vendor.cne.feature=1
-
 # Data
 persist.data.df.agg.dl_pkt=10
 persist.data.df.agg.dl_size=4096

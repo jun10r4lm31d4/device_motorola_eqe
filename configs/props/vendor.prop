@@ -153,6 +153,9 @@ persist.vendor.camera.physical.num=4
 persist.vendor.camera.privapp.list=com.motorola.camera3
 ro.camera.enableCamera1MaxZsl=1
 
+# CNE
+persist.vendor.cne.feature=1
+
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
 dalvik.vm.heapgrowthlimit=256m
@@ -192,7 +195,6 @@ vendor.display.use_smooth_motion=1
 vendor.display.vds_allow_hwc=1
 
 # DPM
-persist.vendor.dpm.feature=0
 persist.vendor.dpm.vndr.feature=11
 persist.vendor.dpm.vndr.halservice.enable=1
 persist.vendor.dpm.vndr.idletimer.mode=default

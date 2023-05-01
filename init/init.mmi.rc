@@ -375,6 +375,10 @@ on property:sys.boot_completed=1 && property:ro.vendor.zram.product_swapon=""
     write /proc/sys/vm/swappiness 100
     setprop sys.sysctl.swappiness 100
 
+on property:sys.boot_completed=1
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
+
 on property:sys.boot_completed=1 && property:ro.vendor.bootreason=coldboot
     start vendor.apanic_copy
 

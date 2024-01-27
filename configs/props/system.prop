@@ -54,9 +54,6 @@ persist.vendor.data.mode=concurrent
 # NFC
 persist.nfc_cfg.config_file_name=libnfc-nci-st.conf
 
-# Perf
-persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
-
 # Radio
 persist.vendor.data.qmipriod_load=1
 persist.vendor.data.shsusr_load=1

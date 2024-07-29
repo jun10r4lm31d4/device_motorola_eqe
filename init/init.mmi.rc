@@ -459,16 +459,6 @@ on property:ro.vendor.hw.felica=true && property:ro.vendor.hw.nfc=ese_st
 on property:sys.sysctl.swappiness=*
     write /proc/sys/vm/swappiness ${sys.sysctl.swappiness}
 
-service vendor.mbm_spy /vendor/bin/mbm_spy
-    class late_start
-    user system
-    group system
-    oneshot
-    disabled
-
-on property:sys.boot_completed=1
-    start vendor.mbm_spy
-
 service vendor.mmi-touch-sh /vendor/bin/init.mmi.touch.sh
     class core
     user root

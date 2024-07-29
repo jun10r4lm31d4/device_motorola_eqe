@@ -1314,7 +1314,6 @@ system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/hw/qcrilNrd
 vendor/bin/init.mdm.sh
 vendor/bin/ks
-vendor/bin/mbm_spy
 vendor/bin/qms
 vendor/bin/qtigetprop
 vendor/bin/qtisetprop

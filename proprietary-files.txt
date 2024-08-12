@@ -1077,9 +1077,6 @@ vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
 vendor/lib64/libcapiv2uvvendor.so
-vendor/lib64/libeai_fixed.so
-vendor/lib64/libeai_float.so
-vendor/lib64/liblistensoundmodel2vendor.so
 
 # Media
 system_ext/lib64/libmmosal.so

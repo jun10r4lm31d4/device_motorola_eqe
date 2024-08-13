@@ -165,6 +165,12 @@ TARGET_KERNEL_EXT_MODULES := \
     motorola/drivers/nfc/st21nfc \
     motorola/drivers/ese/st54spi_gpio
 
+# Lineage Health
+TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
+TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/power_supply/battery/device/force_charger_suspend
+TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED := 0
+TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED := 1
+
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 

@@ -162,9 +162,6 @@ TARGET_KERNEL_EXT_MODULES := \
     motorola/drivers/input/touchscreen/goodix_berlin_mmi \
     motorola/drivers/input/misc/goodix_fod_mmi \
     motorola/drivers/input/misc/vl53L1_14_1_2 \
-    motorola/drivers/moto_mm \
-    motorola/drivers/moto_mmap_fault \
-    motorola/drivers/moto_swap \
     motorola/drivers/nfc/st21nfc \
     motorola/drivers/ese/st54spi_gpio
 

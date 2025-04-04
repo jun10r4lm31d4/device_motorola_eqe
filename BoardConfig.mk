@@ -149,10 +149,8 @@ TARGET_KERNEL_EXT_MODULES := \
     motorola/drivers/misc/utag \
     motorola/drivers/mmi_relay \
     motorola/drivers/power/mmi_lpd_mitigate \
-    motorola/drivers/moto_f_usbnet \
     motorola/drivers/misc/mmi_sys_temp \
     motorola/drivers/power/wakeup_sources \
-    motorola/drivers/watchdogtest \
     motorola/drivers/regulator/wl2868c \
     motorola/drivers/regulator/wl2864c \
     motorola/drivers/sensors \

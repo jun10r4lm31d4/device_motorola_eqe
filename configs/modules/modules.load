@@ -249,9 +249,7 @@ msm_video.ko
 utags.ko
 mmi_annotate.ko
 mmi_info.ko
-moto_f_usbnet.ko
 bm_adsp_ulog.ko
-watchdogtest.ko
 wakeup_sources.ko
 mmi_charger.ko
 mmi_relay.ko

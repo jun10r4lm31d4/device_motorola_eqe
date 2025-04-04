@@ -1048,7 +1048,6 @@ vendor/bin/init.qcom.sh
 vendor/bin/init.qti.kernel.sh
 vendor/bin/system_dlkm_modprobe.sh
 vendor/bin/vendor_modprobe.sh
-vendor/etc/init/hw/init.mmi.chipset.rc
 vendor/etc/init/hw/init.qti.kernel.rc
 
 # Keylayout

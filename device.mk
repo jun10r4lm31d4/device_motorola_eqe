@@ -178,6 +178,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom.vendor_ramdisk \
     fstab.qcom.zram \
     init.mmi.charge_only.rc \
+    init.mmi.chipset.rc \
     init.mmi.overlay.rc \
     init.mmi.rc \
     init.qcom.rc \

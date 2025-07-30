@@ -237,6 +237,8 @@ PRODUCT_PACKAGES += \
     libavservices_minijail \
     libpalclient
 
+$(call soong_config_set_bool,stagefright,target_disable_thumbnail_block_model,true)
+
 # Memtrack
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service

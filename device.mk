@@ -316,6 +316,7 @@ PRODUCT_PACKAGES += \
     ApertureResDevice_eqe \
     DeviceAsWebcamResDevice_eqe \
     FrameworksResDevice_eqe \
+    Launcher3ResDevice_eqe \
     LineageSDKResDevice_eqe \
     LineageSettingsResDevice_eqe \
     LineageSystemUIResDevice_eqe \

@@ -5,6 +5,24 @@
 
 DEVICE_PATH := device/motorola/eqe
 
+# A/B
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    init_boot \
+    product \
+    recovery \
+    system \
+    system_dlkm \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vendor \
+    vendor_dlkm \
+    vendor_boot
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv9-a
@@ -12,13 +30,33 @@ TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := kryo300
 
+# Audio
+AUDIO_FEATURE_ENABLED_DLKM := true
+AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
+AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
+AUDIO_FEATURE_ENABLED_GKI := true
+AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
+AUDIO_FEATURE_ENABLED_AGM_HIDL := true
+AUDIO_FEATURE_ENABLED_LSM_HIDL := true
+AUDIO_FEATURE_ENABLED_PAL_HIDL := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
+AUDIO_FEATURE_ENABLED_SSR := true
+AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
+BOARD_SUPPORTS_OPENSOURCE_STHAL := true
+BOARD_SUPPORTS_SOUND_TRIGGER := true
+BOARD_USES_ALSA_AUDIO := true
+TARGET_PROVIDES_AUDIO_HAL := true
+TARGET_PROVIDES_LIBAGM := true
+TARGET_PROVIDES_LIBAR_PAL := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := eqe
 TARGET_NO_BOOTLOADER := true
 
-# Init boot
-BOARD_INIT_BOOT_HEADER_VERSION := 4
-BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
+# Boot
+BOARD_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_RAMDISK_USE_LZ4 := true
 
 # Display
 TARGET_SCREEN_DENSITY := 450
@@ -28,26 +66,37 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_USES_QCOM_MERGE_DTBS_SCRIPT := true
 TARGET_NEEDS_DTBOIMAGE := true
 
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
+# GPS
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
+
+# Init boot
+BOARD_INIT_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
+
 # Kernel
-BOARD_BOOT_HEADER_VERSION := 4
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
-BOARD_KERNEL_CMDLINE += nosoftlockup
-BOARD_KERNEL_CMDLINE += pstore.compress=none
-BOARD_KERNEL_CMDLINE += page_pinner=on
-BOARD_KERNEL_CMDLINE += printk.devkmsg=on
-BOARD_KERNEL_CMDLINE += mem.enable_mglru=1
-BOARD_BOOTCONFIG += androidboot.hardware=qcom
-BOARD_BOOTCONFIG += androidboot.memcg=1
-BOARD_BOOTCONFIG += androidboot.usbcontroller=a600000.dwc3
-# BOARD_BOOTCONFIG += androidboot.selinux=permissive
-BOARD_KERNEL_IMAGE_NAME := Image
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-BOARD_RAMDISK_USE_LZ4 := true
+BOARD_BOOTCONFIG := \
+    androidboot.hardware=qcom \
+    androidboot.memcg=1 \
+    androidboot.usbcontroller=a600000.dwc3
+
+BOARD_KERNEL_CMDLINE := \
+    video=vfb:640x400,bpp=32,memsize=3072000 \
+    nosoftlockup \
+    pstore.compress=none \
+    page_pinner=on \
+    printk.devkmsg=on \
+    mem.enable_mglru=1
+
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_IMAGE_NAME := Image
 
 TARGET_KERNEL_SOURCE := kernel/motorola/sm7550
+
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
     vendor/kalama_GKI.config \
@@ -121,56 +170,6 @@ TARGET_KERNEL_EXT_MODULES := \
     motorola/drivers/nfc/st21nfc \
     motorola/drivers/ese/st54spi_gpio
 
-# Platform
-BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := crow
-
-BOARD_ROOT_EXTRA_SYMLINKS := \
-    /vendor/fsg:/fsg
-
-# A/B
-AB_OTA_UPDATER := true
-
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    init_boot \
-    product \
-    recovery \
-    system \
-    system_dlkm \
-    system_ext \
-    vbmeta \
-    vbmeta_system \
-    vendor \
-    vendor_dlkm \
-    vendor_boot
-
-# Audio
-AUDIO_FEATURE_ENABLED_DLKM := true
-AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
-AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
-AUDIO_FEATURE_ENABLED_GKI := true
-AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
-AUDIO_FEATURE_ENABLED_AGM_HIDL := true
-AUDIO_FEATURE_ENABLED_LSM_HIDL := true
-AUDIO_FEATURE_ENABLED_PAL_HIDL := true
-AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
-AUDIO_FEATURE_ENABLED_SSR := true
-AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
-BOARD_SUPPORTS_OPENSOURCE_STHAL := true
-BOARD_SUPPORTS_SOUND_TRIGGER := true
-BOARD_USES_ALSA_AUDIO := true
-TARGET_PROVIDES_AUDIO_HAL := true
-TARGET_PROVIDES_LIBAGM := true
-TARGET_PROVIDES_LIBAR_PAL := true
-
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
-
-# GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
-
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
@@ -206,18 +205,24 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
+BOARD_ROOT_EXTRA_SYMLINKS := /vendor/fsg:/fsg
+
+# Platform
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_BOARD_PLATFORM := crow
+
 # Properties
-TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/configs/props/odm.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/props/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
 
 # Recovery
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery/recovery.wipe
 
 # RIL
@@ -227,7 +232,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 BOOT_SECURITY_PATCH := 2025-05-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
-# SELinux
+# SEPolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
@@ -244,6 +249,24 @@ BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
+
+# VINTF
+DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/framework_manifest.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    $(DEVICE_PATH)/configs/vintf/device_framework_matrix.xml \
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
+    vendor/lineage/config/device_framework_matrix.xml
+DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
+DEVICE_MANIFEST_SKUS := crow
+DEVICE_MANIFEST_CROW_FILES += \
+    $(DEVICE_PATH)/configs/vintf/manifest_crow.xml \
+    hardware/qcom-caf/sm8550/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
+    hardware/qcom-caf/sm8550/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml \
+    $(DEVICE_PATH)/configs/vintf/secure_element-service.xml
+
+ODM_MANIFEST_SKUS += dn dne
+ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/vintf/manifest_eqe_dn.xml
+ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/configs/vintf/manifest_eqe_dne.xml
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn

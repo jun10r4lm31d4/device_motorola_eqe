@@ -192,11 +192,6 @@ $(foreach f,$(wildcard $(DEVICE_PATH)/init/etc/init/*.rc),\
 $(foreach f,$(wildcard $(DEVICE_PATH)/init/bin/*.sh),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/bin/$(notdir $f)))
 
-$(foreach f,$(wildcard $(DEVICE_PATH)/init/system/etc/*.rc),\
-        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_ROOT)/$(notdir $f)))
-$(foreach f,$(wildcard $(DEVICE_PATH)/init/system/bin/*.sh),\
-        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/bin/$(notdir $f)))
-
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \

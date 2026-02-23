@@ -11,7 +11,6 @@ from extract_utils.fixups_blob import (
     blob_fixups_user_type,
 )
 from extract_utils.fixups_lib import (
-    lib_fixup_remove,
     lib_fixups,
     lib_fixups_user_type,
 )
@@ -38,6 +37,8 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'com.qualcomm.qti.dpm.api@1.0',
+        'motorola.hardware.camera.desktop@1.0',
+        'motorola.hardware.camera.desktop@2.0',
         'vendor.qti.diaghal@1.0',
         'vendor.qti.hardware.dpmservice@1.0',
         'vendor.qti.hardware.dpmservice@1.1',
@@ -45,27 +46,21 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.qccsyshal@1.0',
         'vendor.qti.hardware.qccsyshal@1.1',
         'vendor.qti.hardware.qccsyshal@1.2',
+        'vendor.qti.hardware.qccvndhal@1.0.so',
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.imsrtpservice@3.0',
         'vendor.qti.imsrtpservice@3.1',
         'vendor.qti.qspmhal@1.0',
     ): lib_fixup_vendor_suffix,
-    (
-        'libar-acdb',
-        'libar-gsl',
-        'liblx-osal',
-        'libats',
-        'libagmclient',
-        'libpalclient',
-        'vendor.qti.hardware.AGMIPC@1.0-impl',
-    ): lib_fixup_remove,
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'system_ext/etc/permissions/moto-telephony.xml': blob_fixup()
+    ('system_ext/etc/permissions/moto-ims-ext.xml', 'system_ext/etc/permissions/moto-telephony.xml'): blob_fixup()
         .regex_replace('/system/', '/system_ext/'),
-    'system_ext/priv-app/ims/ims.apk': blob_fixup()
-        .apktool_patch('ims-patches'),
+    'system_ext/lib64/libwfdnative.so': blob_fixup()
+        .add_needed('libinput_shim.so'),
+    'system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so': blob_fixup()
+        .replace_needed('libprotobuf-cpp-full.so', 'libprotobuf-cpp-full-21.7.so'),
     'vendor/lib64/libwvhidl.so': blob_fixup()
         .add_needed('libcrypto_shim.so'),
     ('vendor/bin/hw/android.hardware.security.keymint-service-qti', 'vendor/lib64/libqtikeymint.so'): blob_fixup()
@@ -83,7 +78,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libhidlbase_shim.so'),
     ('vendor/lib/libmot_chi_desktop_helper.so', 'vendor/lib64/libmot_chi_desktop_helper.so'): blob_fixup()
         .add_needed('libgui_shim_vendor.so'),
-    ('vendor/lib64/sensors.moto.so', 'vendor/lib64/nfc_nci.nqx.default.hw.so'): blob_fixup()
+    ('vendor/bin/STFlashTool', 'vendor/lib64/sensors.moto.so', 'vendor/lib64/nfc_nci.nqx.default.hw.so'): blob_fixup()
         .add_needed('libbase_shim.so'),
     (
         'vendor/bin/hw/motorola.hardware.sensorext-service',
@@ -101,7 +96,7 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libstandbyfeature.so',
         'vendor/lib64/libvideooptfeature.so',
     ): blob_fixup()
-        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+        .replace_needed('libtinyxml2.so', 'libtinyxml2_1.so'),
 }  # fmt: skip
 
 extract_fns: extract_fns_user_type = {

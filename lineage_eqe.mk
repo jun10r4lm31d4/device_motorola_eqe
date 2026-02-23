@@ -32,6 +32,6 @@ PRODUCT_MODEL := motorola edge 50 pro
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="eqe_g-user 15 V1UM35M.10-67-9 7ae82e release-keys" \
-    BuildFingerprint=motorola/eqe_g/eqe:15/V1UM35M.10-67-9/7ae82e:user/release-keys \
+    BuildDesc="eqe_g-user 16 W1UM36H.19-13-4 3258a8-65d2c release-keys" \
+    BuildFingerprint=motorola/eqe_g/eqe:16/W1UM36H.19-13-4/3258a8-65d2c:user/release-keys \
     DeviceProduct=eqe_g

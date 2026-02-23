@@ -37,6 +37,9 @@ value:2912
 [AID_VENDOR_THALES_STRONGBOX]
 value:2913
 
+[AID_VENDOR_THALES_WEAVER]
+value:2914
+
 [AID_VENDOR_BRIDGE_RW]
 value:5001
 
@@ -65,7 +68,7 @@ value:5121
 mode: 0755
 user: AID_VENDOR_THALES_STRONGBOX
 group: AID_SYSTEM
-caps: SYS_ADMIN SYS_NICE
+caps: BLOCK_SUSPEND SYS_ADMIN SYS_NICE WAKE_ALARM
 
 [vendor/bin/hw/android.hardware.security.keymint-service.strongbox]
 mode: 0755
@@ -185,61 +188,61 @@ caps: NET_BIND_SERVICE
 mode: 0755
 user: AID_RADIO
 group: AID_RADIO
-caps: NET_BIND_SERVICE BLOCK_SUSPEND WAKE_ALARM
+caps: BLOCK_SUSPEND NET_BIND_SERVICE WAKE_ALARM
 
 [system/vendor/bin/imsrcsd]
 mode: 0755
 user: AID_RADIO
 group: AID_RADIO
-caps: NET_BIND_SERVICE BLOCK_SUSPEND WAKE_ALARM
+caps: BLOCK_SUSPEND NET_BIND_SERVICE WAKE_ALARM
 
 [vendor/bin/imsdaemon]
 mode: 0755
 user: AID_RADIO
 group: AID_RADIO
-caps: NET_BIND_SERVICE BLOCK_SUSPEND WAKE_ALARM
+caps: BLOCK_SUSPEND NET_BIND_SERVICE WAKE_ALARM
 
 [vendor/bin/cnd]
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
-caps: NET_BIND_SERVICE BLOCK_SUSPEND NET_ADMIN
+caps: BLOCK_SUSPEND NET_BIND_SERVICE NET_ADMIN
 
 [system/vendor/bin/cnd]
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
-caps: NET_BIND_SERVICE BLOCK_SUSPEND NET_ADMIN
+caps: BLOCK_SUSPEND NET_BIND_SERVICE NET_ADMIN
 
 [vendor/bin/slim_daemon]
 mode: 0755
-user:  AID_GPS
+user: AID_GPS
 group: AID_GPS
 caps: NET_BIND_SERVICE
 
 [system/vendor/bin/slim_daemon]
 mode: 0755
-user:  AID_GPS
+user: AID_GPS
 group: AID_GPS
 caps: NET_BIND_SERVICE
 
 [vendor/bin/loc_launcher]
 mode: 0755
-user:  AID_GPS
+user: AID_GPS
 group: AID_GPS
-caps: SETUID SETGID
+caps: SETGID SETUID
 
 [system/vendor/bin/loc_launcher]
 mode: 0755
-user:  AID_GPS
+user: AID_GPS
 group: AID_GPS
-caps: SETUID SETGID
+caps: SETGID SETUID
 
 [vendor/bin/xtwifi-client]
 mode: 0755
-user:  AID_GPS
+user: AID_GPS
 group: AID_GPS
-caps: NET_BIND_SERVICE BLOCK_SUSPEND WAKE_ALARM
+caps: BLOCK_SUSPEND NET_BIND_SERVICE WAKE_ALARM
 
 [vendor/bin/sensors.qti]
 mode: 0755
@@ -282,3 +285,45 @@ mode: 0771
 user: AID_MEDIA
 group: AID_MEDIA
 caps: 0
+
+[product/etc/felica/]
+mode: 0755
+user: AID_ROOT
+group: AID_ROOT
+caps: 0
+
+[product/etc/felica/*]
+mode: 0444
+user: AID_ROOT
+group: AID_ROOT
+caps: 0
+
+[product/priv-app/MobileFeliCaClient/oat/arm64/*]
+mode: 0640
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
+[product/priv-app/MobileFeliCaMenuMainApp/oat/arm64/*]
+mode: 0640
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
+[product/priv-app/MobileFeliCaSettingApp/oat/arm64/*]
+mode: 0640
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
+[product/priv-app/MobileFeliCaWebPluginBoot/oat/arm64/*]
+mode: 0640
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
+[vendor/bin/hw/android.hardware.weaver@1.0-service-thales]
+mode: 0755
+user: AID_VENDOR_THALES_WEAVER
+group: AID_SYSTEM
+caps: SYS_ADMIN SYS_NICE

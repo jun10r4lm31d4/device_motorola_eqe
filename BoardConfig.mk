@@ -234,7 +234,7 @@ TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery/recovery.wipe
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security
-BOOT_SECURITY_PATCH := 2025-05-01
+BOOT_SECURITY_PATCH := 2025-08-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # SEPolicy
@@ -266,8 +266,7 @@ DEVICE_MANIFEST_SKUS := crow
 DEVICE_MANIFEST_CROW_FILES += \
     $(DEVICE_PATH)/configs/vintf/manifest_crow.xml \
     hardware/qcom-caf/sm8550/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
-    hardware/qcom-caf/sm8550/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml \
-    $(DEVICE_PATH)/configs/vintf/secure_element-service.xml
+    hardware/qcom-caf/sm8550/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
 
 ODM_MANIFEST_SKUS += dn dne
 ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/vintf/manifest_eqe_dn.xml

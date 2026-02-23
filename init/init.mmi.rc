@@ -87,7 +87,6 @@ on post-fs && property:ro.vendor.hw.fsg_super_image=yes
 
 on post-fs
     mkdir /mnt/vendor/persist/camera 0755 vendor_tcmd vendor_tcmd
-    mkdir /mnt/vendor/persist/camera/iqtuning 0755 vendor_tcmd vendor_tcmd
     mkdir /mnt/vendor/persist/camera/dualcal 0775 camera vendor_tcmd
     mkdir /mnt/vendor/persist/camera/focus 0775 camera vendor_tcmd
     mkdir /mnt/vendor/persist/camera/ledcal 0775 camera vendor_tcmd
@@ -250,12 +249,6 @@ on post-fs-data
 
     #Folder for hardware properties
     mkdir /data/vendor/hardware_revisions 0755 system system
-
-    # Imager tuning data for camera subsystem
-    mkdir /data/vendor/misc/imager 0771 camera camera
-
-    # Imager tuning metadata for camera subsystem
-    mkdir /data/vendor/misc/imager/metadata 0771 camera camera
 
     # NFC vendor data
     mkdir /data/vendor/nfc 0770 nfc nfc

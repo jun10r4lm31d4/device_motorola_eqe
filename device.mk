@@ -173,20 +173,17 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
 # Init
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
-
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
-    $(DEVICE_PATH)/init/fstab.qcom.zram:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom.zram \
-    $(DEVICE_PATH)/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
-
-$(foreach f,$(wildcard $(DEVICE_PATH)/init/etc/init/hw/*.rc),\
-        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/$(notdir $f)))
-$(foreach f,$(wildcard $(DEVICE_PATH)/init/etc/init/*.rc),\
-        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/$(notdir $f)))
-$(foreach f,$(wildcard $(DEVICE_PATH)/init/bin/*.sh),\
-        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/bin/$(notdir $f)))
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    fstab.qcom.vendor_ramdisk \
+    fstab.qcom.zram \
+    init.mmi.charge_only.rc \
+    init.mmi.overlay.rc \
+    init.mmi.rc \
+    init.qcom.rc \
+    init.qcom.recovery.rc \
+    init.target.rc \
+    ueventd.qcom.rc
 
 # IPACM
 PRODUCT_PACKAGES += \

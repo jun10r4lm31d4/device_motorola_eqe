@@ -24,6 +24,3 @@
 
 # Radio
 /(vendor|system/vendor)/bin/mbm_spy                     u:object_r:vendor_mbm_spy_exec:s0
-
-# Touch
-/vendor/bin/hw/vendor\.lineage\.touch-service\.eqe                            u:object_r:hal_lineage_touch_default_exec:s0

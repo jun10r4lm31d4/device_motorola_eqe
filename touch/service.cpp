@@ -20,21 +20,14 @@
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
 
-#include "HighTouchPollingRate.h"
 #include "TouchscreenGesture.h"
 
-using aidl::vendor::lineage::touch::HighTouchPollingRate;
 using aidl::vendor::lineage::touch::TouchscreenGesture;
 
 int main() {
     binder_status_t status = STATUS_OK;
 
     ABinderProcess_setThreadPoolMaxThreadCount(0);
-
-    std::shared_ptr<HighTouchPollingRate> htpr = ndk::SharedRefBase::make<HighTouchPollingRate>();
-    status = AServiceManager_addService(
-            htpr->asBinder().get(), HighTouchPollingRate::makeServiceName("default").c_str());
-    CHECK_EQ(status, STATUS_OK) << "Cannot register touchscreen glove HAL service.";
 
     std::shared_ptr<TouchscreenGesture> tg = ndk::SharedRefBase::make<TouchscreenGesture>();
     status = AServiceManager_addService(

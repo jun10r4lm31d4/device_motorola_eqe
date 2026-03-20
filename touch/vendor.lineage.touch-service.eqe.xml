@@ -3,10 +3,6 @@
         <name>vendor.lineage.touch</name>
         <version>1</version>
         <interface>
-            <name>IHighTouchPollingRate</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
             <name>ITouchscreenGesture</name>
             <instance>default</instance>
         </interface>

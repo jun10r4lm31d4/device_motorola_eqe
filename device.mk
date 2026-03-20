@@ -295,11 +295,6 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set,lineage_powershare,powershare_path,/sys/class/power_supply/wireless/device/tx_mode)
 
-# Protobuf
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
-
 # QSPA
 PRODUCT_PACKAGES += \
     vendor.qti.qspa-service

@@ -88,10 +88,7 @@ BOARD_BOOTCONFIG := \
 
 BOARD_KERNEL_CMDLINE := \
     nosoftlockup \
-    pstore.compress=none \
-    page_pinner=on \
     printk.devkmsg=on \
-    mem.enable_mglru=1
 
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_KERNEL_BASE := 0x00000000

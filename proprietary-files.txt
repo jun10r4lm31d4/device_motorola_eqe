@@ -1368,7 +1368,6 @@ vendor/lib64/vendor.qti.qesdsys-V3-ndk.so
 # QMI
 system/etc/sysconfig/qti_whitelist.xml
 vendor/bin/init.qti.write.sh
-vendor/bin/irsc_util
 vendor/bin/qmi_motext_hook
 vendor/bin/qmipriod
 vendor/bin/qrtr-cfg
@@ -1377,7 +1376,6 @@ vendor/bin/qrtr-ns
 vendor/etc/init/qmipriod.debug.rc
 vendor/etc/init/qmipriod.rc
 vendor/etc/seccomp_policy/qti-systemd.policy
-vendor/etc/sec_config
 vendor/lib64/libadropbox.so
 vendor/lib64/libidl.so
 vendor/lib64/libmdmcutback.so

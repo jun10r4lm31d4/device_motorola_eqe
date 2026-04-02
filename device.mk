@@ -314,10 +314,6 @@ $(call soong_config_set,lineage_powershare,powershare_path,/sys/class/power_supp
 PRODUCT_PACKAGES += \
     vendor.qti.qspa-service
 
-# QTI fwk-detect
-PRODUCT_PACKAGES += \
-    libvndfwk_detect_jni.qti_vendor # Needed by CNE app
-
 # RFS MSM MPSS symlinks
 PRODUCT_PACKAGES += \
     rfs_msm_mpss_readonly_vendor_fsg_symlink

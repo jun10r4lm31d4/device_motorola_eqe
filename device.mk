@@ -5,19 +5,6 @@
 
 DEVICE_PATH := device/motorola/eqe
 
-# Enable project quotas and casefolding for emulated storage without sdcardfs
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
-# Add common definitions for Qualcomm
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
-
-# Enforce generic ramdisk allow list
-$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
-
-# AAPT
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
@@ -36,6 +23,13 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
+
+# AAPT
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
 
 # API
 BOARD_SHIPPING_API_LEVEL := 33
@@ -96,6 +90,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2712
+TARGET_SCREEN_WIDTH := 1220
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
@@ -112,6 +110,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
+
+# Characteristics
+PRODUCT_CHARACTERISTICS := nosdcard
 
 # Display
 PRODUCT_PACKAGES += \
@@ -130,6 +131,12 @@ PRODUCT_COPY_FILES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
+
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# Enforce generic ramdisk allow list
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 # Fastboot
 PRODUCT_PACKAGES += \
@@ -197,6 +204,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.strongbox_keystore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.strongbox_keystore.xml \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
 
+# Lineage Charger
+WITH_LINEAGE_CHARGER := false
+
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
@@ -205,7 +215,7 @@ $(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
 $(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
 $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/device/force_charging_disable)
 
-# LiveDisplay
+# Lineage LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay-service.sdm \
     vendor.lineage.livedisplay-service.sysfs
@@ -228,7 +238,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
-# MotoActions
+# Motorola
 PRODUCT_PACKAGES += \
     MotoActions \
     MotoCommonOverlay
@@ -289,11 +299,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-TARGET_RO_FILE_SYSTEM_TYPE ?= ext4
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 # Power
 PRODUCT_PACKAGES += \
@@ -334,7 +343,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_crow/android.hardware.sensor.stepdetector.xml
 
 # SKU
-# Variant Properties
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,product.*.prop,$(DEVICE_PATH)/configs/props/sku/,$(TARGET_COPY_OUT_PRODUCT))
 

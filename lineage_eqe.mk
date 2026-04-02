@@ -13,16 +13,6 @@ $(call inherit-product, device/motorola/eqe/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2712
-TARGET_SCREEN_WIDTH := 1220
-
-# Characteristics
-PRODUCT_CHARACTERISTICS := nosdcard
-
-# Lineage Charger
-WITH_LINEAGE_CHARGER := false
-
 PRODUCT_NAME := lineage_eqe
 PRODUCT_DEVICE := eqe
 PRODUCT_MANUFACTURER := motorola

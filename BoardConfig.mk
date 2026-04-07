@@ -253,14 +253,19 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/configs/vintf/device_framework_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
+
 DEVICE_MANIFEST_SKUS := crow
 DEVICE_MANIFEST_CROW_FILES += \
     $(DEVICE_PATH)/configs/vintf/manifest_crow.xml \
     hardware/qcom-caf/sm8550/audio/primary-hal/configs/common/manifest_non_qmaa.xml
 
-ODM_MANIFEST_SKUS += dn dne
-ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/vintf/manifest_eqe_dn.xml
-ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/configs/vintf/manifest_eqe_dne.xml
+ODM_MANIFEST_SKUS += b bf bs d df ds
+ODM_MANIFEST_B_FILES := $(DEVICE_PATH)/configs/vintf/manifest_b.xml
+ODM_MANIFEST_BF_FILES := $(DEVICE_PATH)/configs/vintf/manifest_bf.xml
+ODM_MANIFEST_BS_FILES := $(DEVICE_PATH)/configs/vintf/manifest_bs.xml
+ODM_MANIFEST_D_FILES := $(DEVICE_PATH)/configs/vintf/manifest_d.xml
+ODM_MANIFEST_DF_FILES := $(DEVICE_PATH)/configs/vintf/manifest_df.xml
+ODM_MANIFEST_DS_FILES := $(DEVICE_PATH)/configs/vintf/manifest_ds.xml
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn

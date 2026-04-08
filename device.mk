@@ -114,6 +114,9 @@ PRODUCT_COPY_FILES += \
 # Characteristics
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# crDroid matlog
+TARGET_DISABLE_MATLOG := true
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
@@ -348,10 +351,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.hifi_sensors.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_crow/android.hardware.sensor.hifi_sensors.xml
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/permissions/unavail.android.hardware.sensor.relative_humidity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavail.android.hardware.sensor.relative_humidity.xml \
-    $(DEVICE_PATH)/permissions/unavail.android.hardware.sensor.hifi_sensors.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavail.android.hardware.sensor.hifi_sensors.xml \
-    $(DEVICE_PATH)/permissions/unavail.android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavail.android.hardware.sensor.barometer.xml \
-    $(DEVICE_PATH)/permissions/unavail.android.hardware.sensor.ambient_temperature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavail.android.hardware.sensor.ambient_temperature.xml
+    $(DEVICE_PATH)/configs/permissions/unavail.android.hardware.sensor.relative_humidity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavail.android.hardware.sensor.relative_humidity.xml \
+    $(DEVICE_PATH)/configs/permissions/unavail.android.hardware.sensor.hifi_sensors.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavail.android.hardware.sensor.hifi_sensors.xml \
+    $(DEVICE_PATH)/configs/permissions/unavail.android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavail.android.hardware.sensor.barometer.xml \
+    $(DEVICE_PATH)/configs/permissions/unavail.android.hardware.sensor.ambient_temperature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavail.android.hardware.sensor.ambient_temperature.xml
 
 # SKU
 PRODUCT_COPY_FILES += \

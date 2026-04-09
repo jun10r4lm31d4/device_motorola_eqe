@@ -55,31 +55,60 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    ('system_ext/etc/permissions/moto-ims-ext.xml', 'system_ext/etc/permissions/moto-telephony.xml'): blob_fixup()
-        .regex_replace('/system/', '/system_ext/'),
-    'system_ext/lib64/libwfdnative.so': blob_fixup()
-        .add_needed('libinput_shim.so'),
-    'system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so': blob_fixup()
-        .replace_needed('libprotobuf-cpp-full.so', 'libprotobuf-cpp-full-21.7.so'),
-    'vendor/lib64/libwvhidl.so': blob_fixup()
-        .add_needed('libcrypto_shim.so'),
-    ('vendor/bin/hw/android.hardware.security.keymint-service-qti', 'vendor/lib64/libqtikeymint.so'): blob_fixup()
-        .add_needed('android.hardware.security.rkp-V3-ndk.so'),
-    ('vendor/etc/media_codecs_crow_v0.xml', 'vendor/etc/media_codecs_crow_v1.xml', 'vendor/etc/media_codecs_crow_v2.xml'): blob_fixup()
-        .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', ''),
-    'vendor/etc/seccomp_policy/qwesd@2.0.policy': blob_fixup()
+    (
+        'vendor/etc/seccomp_policy/qwesd@2.0.policy',
+    ): blob_fixup()
         .add_line_if_missing('gettid: 1')
         .add_line_if_missing('pipe2: 1'),
-    'vendor/etc/sensors/hals.conf': blob_fixup()
+    (
+        'vendor/etc/sensors/hals.conf',
+    ): blob_fixup()
         .add_line_if_missing('sensors.moto_ext.so'),
-    'vendor/lib64/libqcodec2_core.so': blob_fixup()
-        .add_needed('libcodec2_shim.so'),
-    'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
-        .add_needed('libhidlbase_shim.so'),
-    ('vendor/lib/libmot_chi_desktop_helper.so', 'vendor/lib64/libmot_chi_desktop_helper.so'): blob_fixup()
-        .add_needed('libgui_shim_vendor.so'),
-    'vendor/lib64/sensors.moto.so': blob_fixup()
+    (
+        'vendor/bin/hw/android.hardware.security.keymint-service-qti',
+        'vendor/lib64/libqtikeymint.so',
+    ): blob_fixup()
+        .add_needed('android.hardware.security.rkp-V3-ndk.so'),
+    (
+        'vendor/lib64/sensors.moto.so',
+    ): blob_fixup()
         .add_needed('libbase_shim.so'),
+    (
+        'vendor/lib64/libqcodec2_core.so',
+    ): blob_fixup()
+        .add_needed('libcodec2_shim.so'),
+    (
+        'vendor/lib64/libwvhidl.so',
+    ): blob_fixup()
+        .add_needed('libcrypto_shim.so'),
+    (
+        'vendor/lib/libmot_chi_desktop_helper.so',
+        'vendor/lib64/libmot_chi_desktop_helper.so',
+    ): blob_fixup()
+        .add_needed('libgui_shim_vendor.so'),
+    (
+        'vendor/lib64/vendor.libdpmframework.so',
+    ): blob_fixup()
+        .add_needed('libhidlbase_shim.so'),
+    (
+        'system_ext/lib64/libwfdnative.so',
+    ): blob_fixup()
+        .add_needed('libinput_shim.so'),
+    (
+        'vendor/etc/media_codecs_crow_v0.xml',
+        'vendor/etc/media_codecs_crow_v1.xml',
+        'vendor/etc/media_codecs_crow_v2.xml',
+    ): blob_fixup()
+        .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', ''),
+    (
+        'system_ext/etc/permissions/moto-ims-ext.xml',
+        'system_ext/etc/permissions/moto-telephony.xml',
+    ): blob_fixup()
+        .regex_replace('/system/', '/system_ext/'),
+    (
+        'system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so',
+    ): blob_fixup()
+        .replace_needed('libprotobuf-cpp-full.so', 'libprotobuf-cpp-full-21.7.so'),
     (
         'vendor/bin/hw/motorola.hardware.sensorext-service',
         'vendor/bin/hw/vendor.qti.camera.provider-service_64',

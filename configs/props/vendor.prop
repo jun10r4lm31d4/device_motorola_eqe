@@ -204,7 +204,6 @@ drm.service.enabled=true
 ro.usb.uvc.enabled=true
 
 # Fingerprint
-persist.vendor.qfp=true
 ro.hardware.fingerprint=goodix
 
 # FRP

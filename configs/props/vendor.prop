@@ -295,15 +295,6 @@ persist.vendor.radio.stack_id_1=1
 persist.vendor.radio.suppress_ussd_rel=1
 ro.vendor.use_data_netmgrd=true
 
-# Sensors
-persist.vendor.sensors.enable.mag_filter=true
-persist.vendor.sensors.mot_tap=true
-ro.vendor.sensors.enlarge_tries_count=true
-ro.vendor.sensors.glance_approach=false
-ro.vendor.sensors.led_interfere_rear_light=true
-ro.vendor.sensors.sns_offbody=false
-vendor.dynamic_sensor.setup.timeout.ms=2000
-
 # Shutdown
 sys.vendor.shutdown.waittime=500
 
@@ -326,9 +317,6 @@ ro.surface_flinger.use_color_management=true
 ro.surface_flinger.use_content_detection_for_refresh_rate=true
 ro.surface_flinger.use_smart_90_for_video=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
-
-# Sensors
-persist.vendor.sensors.debug.hal=0
 
 # USB
 sys.usb.mtp.batchcancel=1

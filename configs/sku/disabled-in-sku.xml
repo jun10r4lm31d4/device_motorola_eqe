@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <disabled-in-sku package="com.felicanetworks.mfw.a.boot" />
+    <disabled-in-sku package="com.felicanetworks.mfs" />
+    <disabled-in-sku package="com.felicanetworks.mfm.main" />
+    <disabled-in-sku package="com.felicanetworks.mfc" />
+</config>

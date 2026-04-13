@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <enabled-in-sku-override package="com.felicanetworks.mfw.a.boot" />
+    <enabled-in-sku-override package="com.felicanetworks.mfs" />
+    <enabled-in-sku-override package="com.felicanetworks.mfm.main" />
+    <enabled-in-sku-override package="com.felicanetworks.mfc" />
+</config>

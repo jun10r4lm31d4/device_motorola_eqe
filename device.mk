@@ -360,7 +360,10 @@ PRODUCT_COPY_FILES += \
 
 # SKU
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,product.*.prop,$(DEVICE_PATH)/configs/props/sku/,$(TARGET_COPY_OUT_PRODUCT))
+    $(call find-copy-subdir-files,product.*.prop,$(DEVICE_PATH)/configs/sku/,$(TARGET_COPY_OUT_PRODUCT)) \
+    $(DEVICE_PATH)/configs/sku/disabled-in-sku.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/disabled-in-sku.xml \
+    $(DEVICE_PATH)/configs/sku/enabled-in-sku-override.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/sku_XT2403-4/enabled-in-sku-override.xml \
+    $(DEVICE_PATH)/configs/sku/enabled-in-sku-override.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/sku_XT2403-5/enabled-in-sku-override.xml
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

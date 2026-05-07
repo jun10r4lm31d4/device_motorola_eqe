@@ -85,8 +85,9 @@ BOARD_BOOTCONFIG := \
     androidboot.usbcontroller=a600000.dwc3
 
 BOARD_KERNEL_CMDLINE := \
+    firmware_class.path=/vendor/firmware_mnt/image \
     nosoftlockup \
-    printk.devkmsg=on \
+    printk.devkmsg=on
 
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_KERNEL_BASE := 0x00000000

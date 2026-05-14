@@ -281,31 +281,42 @@ PRODUCT_PACKAGES += \
     OpenEUICC
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay-lineage
-
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
-    ApertureResEqe \
-    FrameworksResEqe \
-    LineageSystemUIEqe \
-    ProductFrameworksResEqe \
-    RegulatoryInfoOverlayEqe \
-    RegulatoryInfoOverlayEqeSB \
-    SettingsResEqe \
-    SystemUIResEqe \
-    SecureElementOverlayEqe
+    CarrierConfigResCommon_Sys \
+    FrameworksResCommon_Sys \
+    NfcResCommon_Sys \
+    SettingsResCommon_Sys \
+    SystemUIResCommon_Sys \
+    TelecommResCommon_Sys \
+    TelephonyResCommon_Sys \
+    UwbResCommon_Sys \
+    UwbResCommonMainline_Sys \
+    WifiResCommon_Sys \
+    WifiResCommonMainline_Sys
 
 PRODUCT_PACKAGES += \
-    FrameworksResCommon_Sys \
-    SystemUIResCommon_Sys \
-    TelephonyResCommon_Sys \
-    WifiResCommon_Sys \
-    FrameworksResTarget \
-    WifiResTarget \
-    NcmTetheringOverlayCommon \
-    DeviceAsWebcamOverlayCommon
+    FrameworksResTarget_crow \
+    SecureElementResTarget_crow \
+    WifiResTarget_crow \
+    WifiResTargetMainline_crow
+
+PRODUCT_PACKAGES += \
+    ApertureResDevice_eqe \
+    DeviceAsWebcamResDevice_eqe \
+    FrameworksResDevice_eqe \
+    LineageSDKResDevice_eqe \
+    LineageSettingsResDevice_eqe \
+    LineageSystemUIResDevice_eqe \
+    RegulatoryInfoResDevice_eqe \
+    RegulatoryInfoResDeviceSB_eqe \
+    SettingsResDevice_eqe \
+    SystemUIResDevice_eqe \
+    WifiResDevice_eqe
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/overlay/partition_order.xml:$(TARGET_COPY_OUT_PRODUCT)/overlay/partition_order.xml
 
 # Partitions
 PRODUCT_PACKAGES += \

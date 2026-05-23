@@ -96,11 +96,9 @@ vendor/lib64/libaualgo_azp_component.so
 vendor/lib64/libaualgo_azp_wrapper.so
 vendor/lib64/libaualgo_foundation.so
 vendor/lib64/libaudio_log_utils.so
-vendor/lib64/libdapparamstorage.so
 vendor/lib64/libext_tflite_c.so
 vendor/lib64/libmcs.so
 vendor/lib64/libqtigefar.so
-vendor/lib64/libspatializerparamstorage.so
 vendor/lib64/libvui_dmgr.so
 vendor/lib64/libvui_dmgr_client.so
 vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so
@@ -1090,6 +1088,7 @@ vendor/etc/media_crow_v2/video_system_specs.json
 vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy
 vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
+vendor/etc/media_codecs_c2.xml
 vendor/etc/media_codecs_crow_v0.xml
 vendor/etc/media_codecs_crow_v1.xml
 vendor/etc/media_codecs_crow_v2.xml
@@ -1147,13 +1146,10 @@ product/etc/permissions/deviceowner-configuration-com.motorola.camera3.xml
 product/etc/permissions/privapp-permissions-com.motorola.camera3.xml
 product/etc/sysconfig/hiddenapi-whitelist-com.motorola.camera3.xml
 product/priv-app/MotCamera4/MotCamera4.apk;PRESIGNED
-system/app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
 system/etc/permissions/com.motorola.motosignature.xml
 system/etc/permissions/moto-core_services.xml
 system/etc/permissions/moto-settings.xml
-system/framework/com.motorola.motosignature.jar
 system/framework/moto-core_services.jar
-system/framework/moto-settings.jar
 system_ext/bin/motsettings
 system_ext/etc/permissions/com.motorola.camera.desktop.xml
 system_ext/etc/public.libraries-motocameradesktop.txt
@@ -1161,7 +1157,6 @@ system_ext/framework/com.motorola.hardware.camera.desktop.jar
 system_ext/lib64/libjni_helper.motocameradesktop.so
 system_ext/lib64/motorola.hardware.camera.desktop@1.0.so
 system_ext/lib64/motorola.hardware.camera.desktop@2.0.so
-system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk
 vendor/bin/hw/motorola.hardware.camera.desktop@2.0-service
 vendor/etc/init/motorola.hardware.camera.desktop@2.0-service.rc
 vendor/etc/permissions/com.motorola.camera.extensions.xml

@@ -249,9 +249,6 @@ ro.hardware.keystore_desede=true
 debug.c2.use_dmabufheaps=1
 debug.stagefright.c2inputsurface=-1
 
-# Motorola
-ro.mot.build.customerid=global
-
 # NFC
 persist.vendor.nfc.st.multisim_fw_config=true
 
@@ -325,9 +322,6 @@ vendor.usb.rmnet.inst.name=rmnet
 vendor.usb.rndis.func.name=gsi
 vendor.usb.use_ffs_mtp=1
 vendor.usb.use_gadget_hal=1
-
-# Wfd
-persist.sys.wfd.virtual=0
 
 # WiFi
 wifi.aware.interface=wifi-aware0

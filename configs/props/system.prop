@@ -48,16 +48,12 @@ media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.media.recorder-max-base-layer-fps=60
 
-# Netmgrd
-persist.vendor.data.mode=concurrent
-
 # NFC
 persist.nfc_cfg.config_file_name=libnfc-nci-st.conf
 
 # Radio
 persist.vendor.data.qmipriod_load=1
 persist.vendor.data.shsusr_load=1
-persist.vendor.radio.atfwd.start=true
 ro.telephony.default_network=33,33
 telephony.lteOnCdmaDevice=1
 

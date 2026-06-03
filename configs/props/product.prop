@@ -11,9 +11,6 @@ ro.audio.relative_volume=true
 esim.enable_esim_system_ui_by_default=true
 masterclear.allow_retain_esim_profiles_after_fdr=true
 
-# Media
-media.stagefright.audio.deep=false
-
 # Motorola
 ro.mot.build.customerid=global
 

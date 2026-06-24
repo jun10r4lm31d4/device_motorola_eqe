@@ -10,10 +10,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from eqe device
 $(call inherit-product, device/motorola/eqe/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Voltage stuff.
+$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_eqe
+PRODUCT_NAME := voltage_eqe
 PRODUCT_DEVICE := eqe
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
@@ -25,3 +25,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="eqe_g-user 16 W1UM36H.19-13-4 3258a8-65d2c release-keys" \
     BuildFingerprint=motorola/eqe_g/eqe:16/W1UM36H.19-13-4/3258a8-65d2c:user/release-keys \
     DeviceProduct=eqe_g
+
+PRODUCT_PACKAGES += \
+    Updater

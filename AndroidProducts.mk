@@ -4,4 +4,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_eqe.mk
+    $(LOCAL_DIR)/voltage_eqe.mk

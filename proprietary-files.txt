@@ -674,6 +674,7 @@ vendor/lib64/libtinyxml2_1.so
 vendor/lib64/libvmfilexfer.so
 
 # Display calibration data
+vendor/etc/display/FOSSConfig.xml
 vendor/etc/display/qdcm_calib_data_mipi_mot_vid_csot_1220p_dsc_667.json
 vendor/etc/display/qdcm_calib_data_mipi_mot_vid_tm_1220p_dsc_667.json
 vendor/etc/display/qdcm_calib_data_mipi_mot_video_dummy_qhd.json

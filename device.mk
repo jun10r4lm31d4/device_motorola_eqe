@@ -238,6 +238,10 @@ $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 $(call soong_config_set_bool,livedisplay_sysfs,enable_af,true)
 $(call soong_config_set_bool,livedisplay_sysfs,enable_se,true)
 
+# LunarisDolby
+PRODUCT_PACKAGES += \
+    LunarisDolby
+
 # Media
 PRODUCT_COPY_FILES += \
     $(AUDIO_HAL_DIR)/configs/common/codec2/media_codecs_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2_audio.xml \

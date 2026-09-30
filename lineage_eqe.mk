@@ -25,3 +25,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="eqe_g-user 16 W1UM36H.19-13-4 3258a8-65d2c release-keys" \
     BuildFingerprint=motorola/eqe_g/eqe:16/W1UM36H.19-13-4/3258a8-65d2c:user/release-keys \
     DeviceProduct=eqe_g
+
+# Flags
+TARGET_INCLUDES_DolbyVision := true

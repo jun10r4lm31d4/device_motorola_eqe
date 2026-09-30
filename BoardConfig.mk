@@ -250,6 +250,7 @@ DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
 DEVICE_MANIFEST_SKUS := crow
 DEVICE_MANIFEST_CROW_FILES += \
+    $(DEVICE_PATH)/configs/vintf/c2_manifest_vendor.xml \
     $(DEVICE_PATH)/configs/vintf/manifest_crow.xml \
     hardware/qcom-caf/sm8550/audio/primary-hal/configs/common/manifest_non_qmaa.xml
 

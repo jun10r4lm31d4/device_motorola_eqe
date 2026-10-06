@@ -14,6 +14,7 @@ $(call inherit-product, device/motorola/eqe/device.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 PRODUCT_NAME := lineage_eqe
+PRODUCT_SYSTEM_NAME := eqe_g
 PRODUCT_DEVICE := eqe
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
@@ -22,8 +23,8 @@ PRODUCT_MODEL := motorola edge 50 pro
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="eqe_g-user 16 W1UM36H.19-13-4 3258a8-65d2c release-keys" \
-    BuildFingerprint=motorola/eqe_g/eqe:16/W1UM36H.19-13-4/3258a8-65d2c:user/release-keys \
+    BuildDesc="eqe_g-user 16 W1UMS36H.52-73-8-7 0507ff-869c5 release-keys MW-324" \
+    BuildFingerprint=motorola/eqe_g/eqe:16/W1UMS36H.52-73-8-7/0507ff-869c5:user/release-keys \
     DeviceProduct=eqe_g
 
 # Flags

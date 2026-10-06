@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from edge 50 pro (16 W1UM36H.19-13-4 3258a8-65d2c).
+## are from edge 50 pro (16 W1UMS36H.52-73-8-7 0507ff-869c5).
 ## variant: RETAIL
 
 # ACDBs
@@ -1135,7 +1135,7 @@ vendor/lib64/qti.video.utils.videobufferlayout.so
 vendor/lib64/libvmmem.so
 
 # MotCamera4
-product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED
+product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED;REQUIRED=MotorolaSettingsProvider,MotoSignatureApp,com.motorola.motosignature,moto-settings
 product/etc/permissions/com.motorola.camera3.adobe_scan.xml
 product/etc/permissions/com.motorola.camera3.content.ai.xml
 product/etc/permissions/com.motorola.camera3.eqe.xml
@@ -1146,9 +1146,7 @@ product/etc/permissions/deviceowner-configuration-com.motorola.camera3.xml
 product/etc/permissions/privapp-permissions-com.motorola.camera3.xml
 product/etc/sysconfig/hiddenapi-whitelist-com.motorola.camera3.xml
 product/priv-app/MotCamera4/MotCamera4.apk;PRESIGNED
-system/etc/permissions/com.motorola.motosignature.xml
 system/etc/permissions/moto-core_services.xml
-system/etc/permissions/moto-settings.xml
 system/framework/moto-core_services.jar
 system_ext/bin/motsettings
 system_ext/etc/permissions/com.motorola.camera.desktop.xml

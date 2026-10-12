@@ -1131,9 +1131,6 @@ vendor/lib64/libqcodec2_utils.so
 vendor/lib64/libqcodec2_v4l2codec.so
 vendor/lib64/qti.video.utils.videobufferlayout.so
 
-# Memory
-vendor/lib64/libvmmem.so
-
 # MotCamera4
 product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED;REQUIRED=MotorolaSettingsProvider,MotoSignatureApp,com.motorola.motosignature,moto-settings
 product/etc/permissions/com.motorola.camera3.adobe_scan.xml

@@ -355,6 +355,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
+PRODUCT_COPY_FILES += \
+    vendor/qcom/opensource/power/config/crow/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
 # PowerShare
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare-service.default

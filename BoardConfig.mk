@@ -228,7 +228,7 @@ PRODUCT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
-BOARD_AVB_KEY_PATH := vendor/lineage-priv/keys/releasekey_rsa.pem
+BOARD_AVB_KEY_PATH := vendor/voltage-priv/keys/releasekey_rsa.pem
 BOARD_AVB_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_ROLLBACK_INDEX := 31
 BOARD_AVB_VBMETA_SYSTEM := system system_ext

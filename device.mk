@@ -149,10 +149,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Enforce generic ramdisk allow list
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
-# Fastboot
-PRODUCT_PACKAGES += \
-    fastbootd
-
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.eqe

@@ -65,6 +65,7 @@ CONFIG_HAL_SRC_DIR := $(AUDIO_HAL_DIR)/configs/crow
 CONFIG_PAL_SRC_DIR := $(AUDIO_HAL_DIR)/../pal/configs/crow
 
 PRODUCT_COPY_FILES += \
+    $(AUDIO_HAL_DIR)/configs/common/bluetooth_qti_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_qti_audio_policy_configuration.xml \
     $(CONFIG_PAL_SRC_DIR)/card-defs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/card-defs.xml
 
 PRODUCT_COPY_FILES += \

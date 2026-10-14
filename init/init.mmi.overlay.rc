@@ -71,6 +71,8 @@ on boot
     chmod 0660 /sys/class/touchscreen/primary/log_trigger
 
     #change vibrator gain node file access permission
+    chown system system /sys/class/leds/vibrator/trigger
+    chmod 0660 /sys/class/leds/vibrator/trigger
     chown system system /sys/class/leds/vibrator/gain
     chmod 0660 /sys/class/leds/vibrator/gain
     chown system system /sys/class/leds/vibrator/strength

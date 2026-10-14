@@ -468,6 +468,7 @@ subsystem mem_buf_vm
 /dev/kmsg                                               0620   root       system
 
 # LED class devices
+/sys/class/leds/vibrator trigger      0660    system    system
 /sys/class/leds/red      delay_on     0640    system    system
 /sys/class/leds/red      delay_off    0640    system    system
 /sys/class/leds/red      breath       0640    system    system

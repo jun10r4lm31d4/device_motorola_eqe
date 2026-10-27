@@ -218,7 +218,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 BOOT_SECURITY_PATCH := 2026-09-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
-# SEPolicy
+# SELinux
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 include hardware/motorola/sepolicy/qti/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor

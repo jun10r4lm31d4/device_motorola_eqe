@@ -49,6 +49,7 @@ media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.media.recorder-max-base-layer-fps=60
+media.settings.xml=/vendor/etc/media_profiles.xml
 
 # Netmgrd
 persist.vendor.data.mode=concurrent

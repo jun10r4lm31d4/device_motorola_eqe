@@ -102,6 +102,10 @@ TARGET_KERNEL_CONFIG := \
     vendor/ext_config/moto-kalama-gki.config \
     vendor/ext_config/moto-kalama-eqe.config
 
+TARGET_KERNEL_ADDITIONAL_FLAGS += \
+    KMI_GENERATION=8 \
+    BRANCH=android13-5.15
+
 # Kernel modules
 BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/configs/modules/modules.load.system_dlkm))
 BOARD_SYSTEM_KERNEL_MODULES_BLOCKLIST_FILE := $(TARGET_KERNEL_SOURCE)/modules.systemdlkm_blocklist.msm.kalama

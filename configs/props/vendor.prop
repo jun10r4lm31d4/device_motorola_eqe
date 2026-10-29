@@ -275,12 +275,6 @@ ro.mot.build.customerid=global
 # NFC
 persist.vendor.nfc.st.multisim_fw_config=true
 
-# Perf
-ro.vendor.extension_library=libqti-perfd-client.so
-persist.sys.perf_fwk_enabled=true
-ro.vendor.perf-hal.ver=2.3
-ro.vendor.perf.scroll_opt=1
-
 # QC2
 vendor.qc2audio.per_frame.flac.dec.enabled=true
 vendor.qc2audio.suspend.enabled=true

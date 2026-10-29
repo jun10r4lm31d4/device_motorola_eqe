@@ -1133,7 +1133,7 @@ vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
 vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
 
 # MotCamera4
-product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED;REQUIRED=MotorolaSettingsProvider,MotoSignatureApp,com.motorola.motosignature,moto-settings
+product/app/MotCamera3AI/MotCamera3AI.apk;OVERRIDES=Aperture;PRESIGNED;REQUIRED=MotorolaSettingsProvider,MotoSignatureApp,com.motorola.motosignature,moto-settings
 product/etc/permissions/com.motorola.camera3.adobe_scan.xml
 product/etc/permissions/com.motorola.camera3.content.ai.xml
 product/etc/permissions/com.motorola.camera3.eqe.xml

@@ -1743,6 +1743,7 @@ vendor/bin/cnss-daemon
 vendor/etc/init/init.vendor.wlan.rc
 
 # WiFi Display
+system_ext/etc/wfdconfigsink.xml
 vendor/bin/wfdhdcphalservice
 vendor/bin/wfdvndservice
 vendor/bin/wifidisplayhalservice

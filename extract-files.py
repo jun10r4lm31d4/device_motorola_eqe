@@ -37,8 +37,6 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'com.qualcomm.qti.dpm.api@1.0',
-        'motorola.hardware.camera.desktop@1.0',
-        'motorola.hardware.camera.desktop@2.0',
         'vendor.qti.diaghal@1.0',
         'vendor.qti.hardware.dpmservice@1.0',
         'vendor.qti.hardware.dpmservice@1.1',

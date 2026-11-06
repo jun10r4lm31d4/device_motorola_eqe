@@ -1,16 +1,11 @@
 # Camera
 /(vendor|system/vendor)/lib64/libBSTDSLR\.so                                             u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib64/libmpbase\.so                                              u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib64/libarcsoft_qnnhtp\.so                                      u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib64/libarcsoft_turbo_hdr_raw(_portrait)?\.so                   u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib64/libarcsoft_turbo_fusion_raw(_portrait)?_super_night\.so    u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib64/libarcsoft_stellartrack\.so                                u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib64/libarcsoft_portrait_distortion_correction\.so              u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib64/libarcsoft_distortion_correction\.so                       u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib64/libpostprocclient\.moto\.so                                u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib64/libenginepostproc\.moto\.so                                u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib64/libiqi_bridge\.so                                          u:object_r:same_process_hal_file:s0
-
+/(vendor|system/vendor)/lib/rfsa/adsp/libQnnHtpV73\.so                                   u:object_r:same_process_hal_file:s0
+ 
 # Fingerprint
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.eqe   u:object_r:hal_fingerprint_default_exec:s0
 

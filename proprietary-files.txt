@@ -416,6 +416,8 @@ vendor/lib64/libtriplecam_video_optical_zoom.so
 vendor/lib64/libubifocus.so
 vendor/lib64/libvideoml.so
 vendor/lib64/libvidhance.so
+vendor/lib64/motorola.hardware.camera.desktop@1.0.so
+vendor/lib64/motorola.hardware.camera.desktop@2.0.so
 vendor/lib64/sensors.tof.vl53l1.so
 vendor/lib64/sr_models.bin:vendor/etc/camera/sr_models.bin;SYMLINK=vendor/lib64/sr_models.bin
 vendor/lib64/vendor.arcsoft.hardware.camera.postproc-V1-ndk.so
@@ -1133,39 +1135,23 @@ vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
 vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
 
 # MotCamera4
-product/app/MotCamera3AI/MotCamera3AI.apk;OVERRIDES=Aperture;PRESIGNED;REQUIRED=MotorolaSettingsProvider,MotoSignatureApp,com.motorola.motosignature,moto-settings
+product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED
+product/etc/init/init.motcamera3.lens.rc:vendor/etc/init/init.motcamera3.lens.rc
 product/etc/permissions/com.motorola.camera3.adobe_scan.xml
 product/etc/permissions/com.motorola.camera3.content.ai.xml
 product/etc/permissions/com.motorola.camera3.eqe.xml
 product/etc/permissions/com.motorola.camera3.lens.xml
 product/etc/permissions/com.motorola.camera3.xml
-product/etc/permissions/com.motorola.moto-uirefresh.xml
-product/etc/permissions/deviceowner-configuration-com.motorola.camera3.xml
-product/etc/permissions/privapp-permissions-com.motorola.camera3.xml
+product/etc/permissions/privapp-permissions-com.motorola.camera3.xml:vendor/etc/permissions/privapp-permissions-com.motorola.camera3.xml
 product/etc/sysconfig/hiddenapi-whitelist-com.motorola.camera3.xml
-product/priv-app/MotCamera4/MotCamera4.apk;PRESIGNED
-system/app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
+product/etc/sysconfig/initial-package-stopped-states-com.motorola.camera3.xml
+product/priv-app/MotCamera4/MotCamera4.apk:vendor/priv-app/MotCamera4/MotCamera4.apk;OVERRIDES=Aperture;PRESIGNED;REQUIRED=MotCamera4.libc++_symlink
 system/etc/permissions/com.motorola.motosignature.xml
 system/etc/permissions/moto-core_services.xml
 system/etc/permissions/moto-settings.xml
 system/framework/com.motorola.motosignature.jar
 system/framework/moto-core_services.jar
 system/framework/moto-settings.jar
-system_ext/bin/motsettings
-system_ext/etc/permissions/com.motorola.camera.desktop.xml
-system_ext/etc/public.libraries-motocameradesktop.txt
-system_ext/framework/com.motorola.hardware.camera.desktop.jar
-system_ext/lib64/libjni_helper.motocameradesktop.so
-system_ext/lib64/motorola.hardware.camera.desktop@1.0.so
-system_ext/lib64/motorola.hardware.camera.desktop@2.0.so
-system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk
-vendor/bin/hw/motorola.hardware.camera.desktop@2.0-service
-vendor/etc/init/motorola.hardware.camera.desktop@2.0-service.rc
-vendor/etc/permissions/com.motorola.camera.extensions.xml
-vendor/etc/night_config
-vendor/framework/com.motorola.camera.extensions.jar
-vendor/lib64/motorola.hardware.camera.desktop@1.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/motorola.hardware.camera.desktop@2.0.so;MODULE_SUFFIX=_vendor
 
 # Native public libraries
 system_ext/etc/public.libraries-qti.txt

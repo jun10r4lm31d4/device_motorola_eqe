@@ -1,0 +1,6 @@
+allow vendor_snapcam_app vendor_hal_arcsoftpp_service:service_manager { add find };
+allow vendor_snapcam_app radio_service:service_manager find;
+
+binder_call(vendor_snapcam_app, hal_camera_default)
+
+get_prop(vendor_snapcam_app, audio_config_prop)

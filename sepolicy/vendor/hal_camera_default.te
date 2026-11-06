@@ -1,1 +1,5 @@
 allow hal_camera_default vendor_hal_arcsoftpp_service:service_manager { add find };
+
+binder_call(hal_camera_default, vendor_snapcam_app)
+
+allow hal_camera_default proc_meminfo:file r_file_perms;

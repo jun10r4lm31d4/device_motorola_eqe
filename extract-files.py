@@ -37,8 +37,6 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'com.qualcomm.qti.dpm.api@1.0',
-        'motorola.hardware.camera.desktop@1.0',
-        'motorola.hardware.camera.desktop@2.0',
         'vendor.qti.diaghal@1.0',
         'vendor.qti.hardware.dpmservice@1.0',
         'vendor.qti.hardware.dpmservice@1.1',
@@ -50,7 +48,6 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.imsrtpservice@3.0',
         'vendor.qti.imsrtpservice@3.1',
-        'vendor.qti.qspmhal@1.0',
     ): lib_fixup_vendor_suffix,
 }
 
@@ -116,18 +113,10 @@ blob_fixups: blob_fixups_user_type = {
     (
         'vendor/bin/hw/motorola.hardware.sensorext-service',
         'vendor/bin/hw/vendor.qti.camera.provider-service_64',
-        'vendor/bin/poweropt-service',
         'vendor/lib64/camx.provider-impl.so',
-        'vendor/lib64/libaodoptfeature.so',
-        'vendor/lib64/libapengine.so',
         'vendor/lib64/libdpps.so',
         'vendor/lib64/libgamepoweroptfeature.so',
-        'vendor/lib64/liblearningmodule.so',
-        'vendor/lib64/libpowercore.so',
-        'vendor/lib64/libpsmoptfeature.so',
         'vendor/lib64/libsnapdragoncolor-manager.so',
-        'vendor/lib64/libstandbyfeature.so',
-        'vendor/lib64/libvideooptfeature.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2_1.so'),
 }  # fmt: skip

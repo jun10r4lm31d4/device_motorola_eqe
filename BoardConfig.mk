@@ -47,9 +47,6 @@ AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
 BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 BOARD_USES_ALSA_AUDIO := true
-TARGET_PROVIDES_AUDIO_HAL := true
-TARGET_PROVIDES_LIBAGM := true
-TARGET_PROVIDES_LIBAR_PAL := true
 
 # Boot
 BOARD_BOOT_HEADER_VERSION := 4
@@ -104,6 +101,10 @@ TARGET_KERNEL_CONFIG := \
     vendor/ext_config/moto-kalama.config \
     vendor/ext_config/moto-kalama-gki.config \
     vendor/ext_config/moto-kalama-eqe.config
+
+TARGET_KERNEL_ADDITIONAL_FLAGS += \
+    KMI_GENERATION=8 \
+    BRANCH=android13-5.15
 
 # Kernel modules
 BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/configs/modules/modules.load.system_dlkm))
@@ -221,8 +222,9 @@ ENABLE_VENDOR_RIL_SERVICE := true
 BOOT_SECURITY_PATCH := 2026-09-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
-# SEPolicy
+# SELinux
 include device/qcom/sepolicy_vndr/SEPolicy.mk
+include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 include hardware/motorola/sepolicy/qti/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private

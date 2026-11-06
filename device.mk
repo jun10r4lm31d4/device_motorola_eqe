@@ -149,10 +149,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Enforce generic ramdisk allow list
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
-# Fastboot
-PRODUCT_PACKAGES += \
-    fastbootd
-
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.eqe
@@ -195,16 +191,14 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.recovery.rc \
     init.target.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.qcom.post_boot.sh
 
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml \
     IPACM_Filter_cfg.xml
-
-# Kernel
-PRODUCT_ENABLE_UFFD_GC := true
 
 # Keymint
 PRODUCT_PACKAGES += \
@@ -257,16 +251,6 @@ $(call soong_config_set_bool,stagefright,target_disable_thumbnail_block_model,tr
 # Memtrack
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
-
-# Motocamera permissions
-PRODUCT_COPY_FILES += \
-    hardware/dolby/proprietary/system_ext/etc/permissions/com.motorola.motosignature.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.motorola.motosignature.xml \
-    hardware/dolby/proprietary/system_ext/etc/permissions/moto-checkin.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/moto-checkin.xml \
-    hardware/dolby/proprietary/system_ext/etc/permissions/moto-settings.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/moto-settings.xml \
-    hardware/dolby/proprietary/system_ext/etc/permissions/moto.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/moto.xml \
-    hardware/dolby/proprietary/system_ext/etc/permissions/privapp-com.motorola.android.providers.settings.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-com.motorola.android.providers.settings.xml \
-    hardware/dolby/proprietary/system_ext/etc/sysconfig/config-com.motorola.android.providers.settings.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/config-com.motorola.android.providers.settings.xml \
-    hardware/dolby/proprietary/system_ext/etc/sysconfig/config-com.motorola.motosignature.app.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/config-com.motorola.motosignature.app.xml
 
 # Motorola
 PRODUCT_PACKAGES += \
@@ -353,13 +337,17 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
+    android.hardware.power-service.lineage-libperfmgr \
+    libqti-perfd-client
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # PowerShare
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare-service.default
 
-$(call soong_config_set,lineage_powershare,powershare_path,/sys/class/power_supply/wireless/device/tx_mode)
+$(call soong_config_set,lineage_powershare,powershare_path,/sys/class/qcom-battery/wireless_boost_en)
 
 # QSPA
 PRODUCT_PACKAGES += \
@@ -402,7 +390,11 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
-    hardware/motorola
+    hardware/google/interfaces \
+    hardware/google/pixel/power-libperfmgr \
+    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/motorola \
+    hardware/qcom-caf/common/libqti-perfd-client
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -411,7 +403,7 @@ PRODUCT_PACKAGES += \
     extphonelib.xml \
     extphonelib_product.xml \
     MotoEuicc \
-    MotoNrEnabler \
+    MotoExtTelephony \
     ims-ext-common \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \

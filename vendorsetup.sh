@@ -1,7 +1,6 @@
 # device/motorola/eqe/vendorsetup.sh
-KSU_BASE_URL="https://github.com/tiann/KernelSU/releases/latest/download"
-KSU_KO_URL="$KSU_BASE_URL/lkm-aarch64-android13-5.15_kernelsu.ko"
-KSU_INIT_URL="$KSU_BASE_URL/ksuinit-aarch64"
+KSU_KO_URL="https://github.com/KernelSU-Next/KernelSU-Next/releases/latest/download/aarch64_android13-5.15_kernelsu.ko"
+KSU_INIT_URL="https://github.com/tiann/KernelSU/releases/latest/download/ksuinit-aarch64"
 
 KSU_DIR="$(gettop)/device/motorola/eqe/prebuilt/kernelsu"
 KSU_KO="$KSU_DIR/kernelsu.ko"

@@ -198,9 +198,11 @@ on property:sys.boot_completed=1
     chmod 0660 /sys/module/bm_adsp_ulog/parameters/debug_enabled
 
     chown system system /sys/class/power_supply/wireless/device/tx_mode
+    chown system system /sys/class/qcom-battery/wireless_boost_en
     chown system system /sys/class/power_supply/wireless/device/wls_input_current_limit
     chown vendor_tcmd system /sys/class/power_supply/wireless/device/tx_mode_vout
     chmod 0660 /sys/class/power_supply/wireless/device/tx_mode
+    chmod 0660 /sys/class/qcom-battery/wireless_boost_en
     chmod 0660 /sys/class/power_supply/wireless/device/wls_input_current_limit
 
     # Set wlc perms for HAL

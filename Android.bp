@@ -5,7 +5,11 @@
 
 soong_namespace {
     imports: [
+        "hardware/google/interfaces",
+        "hardware/google/pixel",
+        "hardware/lineage/interfaces/power-libperfmgr",
         "hardware/motorola",
+        "hardware/qcom-caf/common/libqti-perfd-client",
     ],
 }
 
@@ -26,4 +30,11 @@ install_symlink {
     vendor: true,
     installed_location: "firmware/wlan/qca_cld/qca6750/WCNSS_qcom_cfg.ini",
     symlink_target: "/vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini",
+}
+install_symlink {
+    name: "MotCamera4.libc++_symlink",
+    vendor: true,
+    installed_location: "priv-app/MotCamera4/lib/arm64/libc++.so",
+    symlink_target: "/vendor/lib64/libc++.so",
+    required: ["libc++.vendor"],
 }

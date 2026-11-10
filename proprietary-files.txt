@@ -426,6 +426,11 @@ vendor/lib64/vendor.arcsoft.hardware.camera.postproc-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.camera.aon-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
 
+# Camera extensions
+vendor/etc/permissions/com.motorola.camera.extensions.xml
+vendor/etc/night_config
+vendor/framework/com.motorola.camera.extensions.jar
+
 # Camera firmware
 vendor/firmware/CAMERA_ICP.b00
 vendor/firmware/CAMERA_ICP.b01

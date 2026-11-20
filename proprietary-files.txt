@@ -159,6 +159,8 @@ vendor/lib64/libbluetooth_audio_session_aidl_qti.so|96b417c278159ad4657e0760698b
 
 # Camera
 vendor/bin/hw/vendor.qti.camera.provider-service_64
+vendor/etc/bstconfig/bstai_hdr
+vendor/etc/bstconfig/hdrcfg.cfg
 vendor/etc/camera/aec_golden_tele.bin
 vendor/etc/camera/aec_golden_wide.bin
 vendor/etc/camera/anc.bin

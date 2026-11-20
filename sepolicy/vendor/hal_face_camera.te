@@ -1,0 +1,23 @@
+# Native camera2 access from the ArcSoft face HAL.
+#
+# libcamera2ndk_vendor connects to the framework camera service
+# (android.frameworks.cameraservice.service.ICameraService/default, labelled
+# fwk_camera_service), and libmediandk allocates the YUV_420_888 buffers through
+# the graphics allocator. All rules are added to the existing hal_face_default
+# domain; the HAL still runs with the standard hal_face file contexts.
+
+binder_use(hal_face_default)
+allow hal_face_default fwk_camera_service:service_manager find;
+binder_call(hal_face_default, cameraserver)
+
+# cameraserver validates the client through the permission checker service
+# running in system_server. The generic system_server:binder call rule already
+# covers the binder transaction; this only allows looking the service up.
+allow hal_face_default permission_checker_service:service_manager find;
+
+# libcamera2ndk_vendor reads camera.* / ro.camera.* system properties.
+get_prop(hal_face_default, camera_config_prop)
+
+# AImageReader/BufferQueue buffer allocation.
+hal_client_domain(hal_face_default, hal_graphics_allocator)
+allow hal_face_default dmabuf_system_heap_device:chr_file r_file_perms;

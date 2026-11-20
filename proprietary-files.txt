@@ -765,6 +765,9 @@ vendor/firmware/evass.b19
 vendor/firmware/evass.mbn
 vendor/firmware/evass.mdt
 
+# FaceUnlock
+product/priv-app/MotoFaceUnlockArcSoft/lib/arm64/libarcsoft_faceid.so:vendor/lib64/libarcsoft_faceid.so
+
 # FASTCV
 vendor/lib64/libfastcvdsp_stub.so
 vendor/lib64/libfastcvopt.so

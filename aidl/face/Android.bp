@@ -1,0 +1,48 @@
+//
+// SPDX-FileCopyrightText: 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// HAL daemon implementing the AOSP android.hardware.biometrics.face interface.
+// We deliberately do not define a local aidl_interface: the framework already
+// provides android.hardware.biometrics.face-V5, and defining another module
+// with that name would collide with hardware/interfaces.
+//
+// No dependency on the MotoFaceUnlockArcSoft APK, MotoFaceBridge,
+// moto-face-framework or moto-core_services, nor on libarcsoft-lib.so: the HAL
+// calls ARC_FI_* in libarcsoft_faceid.so directly.
+//
+// The name is different from the old APK-based HAL so both can coexist in the
+// tree. Update device.mk to use this module instead of the old one.
+cc_binary {
+    name: "android.hardware.biometrics.face-service.motorola",
+    vendor: true,
+    relative_install_path: "hw",
+    srcs: [
+        "main.cpp",
+        "Face.cpp",
+        "Session.cpp",
+        "ArcSoftFace.cpp",
+        "CameraCapture.cpp",
+    ],
+    cflags: ["-Wall"],
+    shared_libs: [
+        "android.hardware.biometrics.face-V5-ndk",
+        "android.hardware.biometrics.common-V4-ndk",
+        "android.hardware.common-V2-ndk",
+        "android.hardware.keymaster-V4-ndk",
+        "libbase",
+        "libbinder_ndk",
+        "liblog",
+        "libnativewindow",
+        // NDK camera2 (vendor variant) talks to cameraserver through the
+        // frameworks/cameraservice AIDL interface. libmediandk provides
+        // AImageReader/AImage for the YUV_420_888 capture stream.
+        "libcamera2ndk_vendor",
+        "libmediandk",
+        "libarcsoft_faceid",
+        "libmpbase",
+    ],
+    init_rc: ["android.hardware.biometrics.face-service.motorola.rc"],
+    vintf_fragments: ["android.hardware.biometrics.face.motorola.xml"],
+}

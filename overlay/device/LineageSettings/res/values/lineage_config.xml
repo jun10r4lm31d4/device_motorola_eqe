@@ -9,4 +9,8 @@
 
     <!-- Whether to show min refresh rate in display settings -->
     <bool name="config_show_min_refresh_rate_switch">true</bool>
+
+    <!-- The face HAL opens the camera itself for enrollment/authentication.
+         Settings must not start a second preview stream on the same sensor. -->
+    <bool name="config_face_enroll_hal_owns_camera">true</bool>
 </resources>

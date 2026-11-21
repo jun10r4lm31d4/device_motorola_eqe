@@ -122,6 +122,9 @@ PRODUCT_CHARACTERISTICS := nosdcard
 # crDroid matlog
 TARGET_DISABLE_MATLOG := true
 
+# Dalvik
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-qti-display \

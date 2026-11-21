@@ -160,15 +160,6 @@ vendor.camera.aux.packagelist2=com.motorola.ccc,com.android.settings,com.motorol
 ro.camerax.extensions.enabled=true
 ro.vendor.audio.camera_video_ainr.supported=true
 
-# Dalvik
-dalvik.vm.dex2oat64.enabled=true
-dalvik.vm.heapgrowthlimit=256m
-dalvik.vm.heapmaxfree=32m
-dalvik.vm.heapminfree=8m
-dalvik.vm.heapsize=512m
-dalvik.vm.heapstartsize=16m
-dalvik.vm.heaptargetutilization=0.5
-
 # Display
 persist.sys.sf.color_mode=0
 persist.sys.sf.color_saturation=1.0

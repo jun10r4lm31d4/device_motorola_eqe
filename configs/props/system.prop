@@ -40,7 +40,6 @@ net.lte.ims.data.enabled=true,true
 ro.qcom.ims.use_moto_vt_ext=true
 
 # Media
-media.stagefright.audio.deep=false
 media.stagefright.enable-aac=true
 media.stagefright.enable-fma2dp=true
 media.stagefright.enable-http=true

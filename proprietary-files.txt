@@ -88,6 +88,10 @@ vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
 # Audio
 vendor/lib64/hw/audio.primary.crow.so
+vendor/lib64/libAlacSwDec.so
+vendor/lib64/libApeSwDec.so
+vendor/lib64/libEvrcSwCodec.so
+vendor/lib64/libFlacSwDec.so
 vendor/lib64/libadm.so
 vendor/lib64/libagm.so
 vendor/lib64/libar-pal.so
@@ -96,9 +100,9 @@ vendor/lib64/libaualgo_azp_component.so
 vendor/lib64/libaualgo_azp_wrapper.so
 vendor/lib64/libaualgo_foundation.so
 vendor/lib64/libaudio_log_utils.so
+vendor/lib64/libdsd2pcm.so
 vendor/lib64/libext_tflite_c.so
 vendor/lib64/libmcs.so
-vendor/lib64/libqesdk2_0.so
 vendor/lib64/libqtigefar.so
 vendor/lib64/libvui_dmgr.so
 vendor/lib64/libvui_dmgr_client.so
@@ -1062,7 +1066,7 @@ vendor/etc/init/hw/init.qti.kernel.rc
 vendor/usr/keylayout/fts_ts.kl
 vendor/usr/keylayout/goodix_ts.kl
 
-# Keymint
+# Keymaster
 vendor/bin/hw/android.hardware.security.keymint-service-qti
 vendor/etc/init/android.hardware.security.keymint-service-qti.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml
@@ -1115,12 +1119,7 @@ vendor/etc/media_profiles_V1_0.xml
 vendor/etc/media_profiles_crow_v0.xml
 vendor/etc/media_profiles_crow_v1.xml
 vendor/etc/media_profiles_crow_v2.xml
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
-vendor/lib64/libEvrcSwCodec.so
-vendor/lib64/libFlacSwDec.so
 vendor/lib64/libQcelp13SwCodec.so
-vendor/lib64/libdsd2pcm.so
 vendor/lib64/libmmosal_vendor.so
 vendor/lib64/libqc2audio_base.so
 vendor/lib64/libqc2audio_basecodec.so
@@ -1144,10 +1143,6 @@ vendor/lib64/libqcodec2_platform.so
 vendor/lib64/libqcodec2_utils.so
 vendor/lib64/libqcodec2_v4l2codec.so
 vendor/lib64/qti.video.utils.videobufferlayout.so
-
-# Memory
-vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
-vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
 
 # MotCamera4
 product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED
@@ -1221,6 +1216,8 @@ vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-qesdk-secure.so
 vendor/lib64/libqti-util.so
+vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
+vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
 
 # Peripheral manager
 vendor/bin/pm-proxy
@@ -1265,6 +1262,9 @@ vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so;MODULE_SUFFIX=_vendor
 # QCV
 vendor/bin/init.qti.qcv.sh
 vendor/etc/init/init.qti.qcv.rc
+
+# QESDK
+vendor/lib64/libqesdk2_0.so
 
 # QMI
 system/etc/sysconfig/qti_whitelist.xml
@@ -1555,6 +1555,8 @@ vendor/etc/init/vendor.qti.secure_element@1.2-service.rc
 vendor/etc/vintf/manifest/secure_element-service.xml
 vendor/lib64/android.hardware.secure_element@1.0-impl.so
 vendor/lib64/jcos_nq_client.so
+vendor/lib64/libGPMTEEC_vendor.so
+vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/libextra-thales.so
 vendor/lib64/libnativecospatchkernel-thales.so
 vendor/lib64/libnativecosupdateapi-thales.so
@@ -1581,7 +1583,6 @@ vendor/etc/init/vendor.qti.hardware.sensorscalibrate@1.0-service.rc
 vendor/etc/init/vendor.sensors.qti.rc
 vendor/etc/init/vendor.sensors.sscrpcd.rc
 vendor/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml
-vendor/etc/sensors/hals.conf
 vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib64/libnanopb.so
 vendor/lib64/libsensorcal.so
@@ -1687,12 +1688,10 @@ vendor/etc/init/vendor.qti.tftp.rc
 # Thermal engine
 vendor/bin/thermal-engine-v2
 vendor/etc/init/init_thermal-engine-v2.rc
-vendor/lib64/liblmthermallistner.so
-vendor/lib64/libthermalclient.so
-
-# Thermal engine configs
 vendor/etc/thermal-engine-eqe-game-perf.conf:vendor/etc/thermal-engine-eqe.conf
 vendor/etc/thermal-engine.conf
+vendor/lib64/liblmthermallistner.so
+vendor/lib64/libthermalclient.so
 
 # Time services
 vendor/app/TimeService/TimeService.apk
@@ -1701,8 +1700,6 @@ vendor/etc/init/init.time_daemon.rc
 vendor/lib64/libtime_genoff.so
 
 # Trusted Execution Environment connector
-vendor/lib64/libGPMTEEC_vendor.so
-vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
